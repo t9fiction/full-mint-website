@@ -14,20 +14,20 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const SHEIR = await hre.ethers.getContractFactory("SHEIR");
-  const baseTokenURI = "ipfs://QmeLJALSfvBfvahxqYewjUFm4SKTsd3ZhbmzSNhRnj8AtU/";
+  const RoboPunksNFT = await hre.ethers.getContractFactory("RoboPunksNFT");
+  // const baseTokenURI = "ipfs://QmeLJALSfvBfvahxqYewjUFm4SKTsd3ZhbmzSNhRnj8AtU/";s
   // const _name = "Disco Lion";
   // const _symbol = "LION";
-  const sheir = await SHEIR.deploy(baseTokenURI);
+  const roboPunksNFT = await RoboPunksNFT.deploy(baseTokenURI);
 
-  await sheir.deployed();
+  await roboPunksNFT.deployed();
 
-  console.log("Contract is deployed at ", sheir.address);
+  console.log("Contract is deployed at ", roboPunksNFT.address);
 
   // Reserve NFTs
-  let txn = await sheir.reserveNFTs(10);
-  await txn.wait();
-  console.log("10 NFTs have been reserved");
+  // let txn = await sheir.reserveNFTs(10);
+  // await txn.wait();
+  // console.log("10 NFTs have been reserved");
 
 }
 
