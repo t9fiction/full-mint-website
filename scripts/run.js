@@ -18,7 +18,8 @@ async function main() {
   // const baseTokenURI = "ipfs://QmeLJALSfvBfvahxqYewjUFm4SKTsd3ZhbmzSNhRnj8AtU/";s
   // const _name = "Disco Lion";
   // const _symbol = "LION";
-  const roboPunksNFT = await RoboPunksNFT.deploy(baseTokenURI);
+  // const roboPunksNFT = await RoboPunksNFT.deploy(baseTokenURI);
+  const roboPunksNFT = await RoboPunksNFT.deploy();
 
   await roboPunksNFT.deployed();
 
