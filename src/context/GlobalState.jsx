@@ -125,7 +125,7 @@ export const GlobalProvider = ({ children }) => {
 
     return (
         <GlobalContext.Provider value={{
-            mintToken, setMintAmount, mintAmount, currentAccount, getModalConnect, disconnectWallet
+            mintToken, setMintAmount, mintAmount, currentAccount, getModalConnect, disconnectWallet, setCurrentAccount
         }} >
             {children}
         </GlobalContext.Provider>

@@ -6,11 +6,16 @@ import Twitter from '../assets/social-media-icons/twitter_32x32.png';
 import email from '../assets/social-media-icons/email_32x32.png';
 
 const NavBar = () => {
-  const { getModalConnect, disconnectWallet, currentAccount } = GlobalStore();
+  const { getModalConnect, disconnectWallet, currentAccount, setCurrentAccount } = GlobalStore();
   // const isConnected = Boolean(accounts[0]);
 
   const handleConnect = async () => {
     await getModalConnect()
+  }
+  
+  const handleDisconnect = async () => {
+    await disconnectWallet()
+    setCurrentAccount("")
   }
 
   return (
@@ -45,7 +50,7 @@ const NavBar = () => {
           fontFamily='Allerta Stencil'
           padding='15px'
           margin='0 15px'
-        onClick={() => disconnectWallet()}>Disconnect</Button> : <Button
+        onClick={() => handleDisconnect()}>Disconnect</Button> : <Button
           backgroundColor="#D6517D"
           borderRadius='5px'
           boxShadow="0px 2px 2px 1px #0f0f0f"
