@@ -33,8 +33,8 @@ const MainMint = () => {
       <Box width='520px'>
         <div>
           <Text fontSize='48px' textShadow='0 5px #000000'>DESI KUKKAR</Text>
-          <Text fontSize='30px' letterSpacing='-5.5%' fontFamily='VT323' textShadow='0 2px 2px #000000'>
-            Can the Robo Punks do something special. This is a test Project.
+          <Text fontSize='30px' letterSpacing='-5.5%' fontFamily='inherit' textShadow='0 2px 2px #000000'>
+            This is the world of Digital Dessi Kukkar. Karahi Goshat on the cards.
           </Text>
         </div>
         {currentAccount ?
@@ -46,7 +46,7 @@ const MainMint = () => {
                 boxShadow="0px 2px 2px 1px #0f0f0f"
                 color='white'
                 cursor='pointer'
-                fontFamily='inherit'
+                fontFamily='Allerta Stencil'
                 padding='15px'
                 marginTop='10px'
                 onClick={handleDecrement}>-</Button>
@@ -65,7 +65,7 @@ const MainMint = () => {
                 boxShadow="0px 2px 2px 1px #0f0f0f"
                 color='white'
                 cursor='pointer'
-                fontFamily='inherit'
+                fontFamily='Allerta Stencil'
                 padding='15px'
                 marginTop='10px'
                 onClick={handleIncrement}>+</Button>
@@ -76,7 +76,7 @@ const MainMint = () => {
               boxShadow="0px 2px 2px 1px #0f0f0f"
               color='white'
               cursor='pointer'
-              fontFamily='inherit'
+              fontFamily='Allerta Stencil'
               padding='15px'
               marginTop='10px'
               onClick={() => handleMint()} >Mint</Button>
@@ -84,7 +84,7 @@ const MainMint = () => {
           marginTop='70px'
           fontSize='30px'
           letterSpacing='-5.5%'
-          fontFamily='VT323'
+          fontFamily='Allerta Stencil'
           textShadow='0 3px #000000'
           color='#D6517D'
           >Connect Metamask to Mint NFT</Text>

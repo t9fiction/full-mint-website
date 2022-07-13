@@ -30,9 +30,9 @@ const NavBar = () => {
 
       {/*Right Side of the NavBar for */}
       <Flex justify="space-around" width="40%" padding="0 75px">
-        <Box margin="0 15px">About</Box>
-        <Box margin="0 15px">Mint</Box>
-        <Box margin="0 15px">Team</Box>
+        <Box margin="0 15px" fontFamily='Allerta Stencil'>About</Box>
+        <Box margin="0 15px" fontFamily='Allerta Stencil'>Mint</Box>
+        <Box margin="0 15px" fontFamily='Allerta Stencil'>Team</Box>
       </Flex>
 
       {/* Connect Button */}
@@ -42,7 +42,7 @@ const NavBar = () => {
           boxShadow="0px 2px 2px 1px #0f0f0f"
           color='white'
           cursor='pointer'
-          fontFamily='inherit'
+          fontFamily='Allerta Stencil'
           padding='15px'
           margin='0 15px'
         onClick={() => disconnectWallet()}>Disconnect</Button> : <Button
@@ -51,7 +51,7 @@ const NavBar = () => {
           boxShadow="0px 2px 2px 1px #0f0f0f"
           color='white'
           cursor='pointer'
-          fontFamily='inherit'
+          fontFamily='Allerta Stencil'
           padding='15px'
           margin='0 15px'
           onClick={() => handleConnect()}>Connect</Button>}
