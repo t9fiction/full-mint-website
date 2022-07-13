@@ -1,12 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { GlobalStore } from '../context/GlobalState'
 import { Box, Button, Flex, Input, Text } from '@chakra-ui/react'
-import { ethers, BigNumber } from 'ethers'
-import RoboPunksNFT from './RoboPunksNFT.json'
 
-// const CONTRACT_ADDRESS = "0x2676037Fe2f9158D1C9bbA67D1CD28d33202a29B"
-// const CONTRACT_ABI = RoboPunksNFT.abi;
-// console.log("Contract ABI : ", CONTRACT_ABI)
 const MainMint = () => {
 
   const { mintToken, mintAmount, setMintAmount, currentAccount } = GlobalStore();

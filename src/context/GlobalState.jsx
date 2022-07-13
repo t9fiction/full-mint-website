@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import RoboPunksNFT from '../components/RoboPunksNFT.json'
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import CoinbaseWalletSDK from '@coinbase/wallet-sdk';
+import Authereum from "authereum";
 // import MewConnect from "@myetherwallet/mewconnect-web-client";
 import { ethers, BigNumber } from 'ethers';
 import Web3Modal from "web3modal";
@@ -23,10 +24,10 @@ export const GlobalProvider = ({ children }) => {
         coinbasewallet: {
             package: CoinbaseWalletSDK, // Required
             options: {
-                appName: "My Awesome App", // Required
-                infuraId: "INFURA_ID", // Required
+                appName: "Desi Kukar", // Required
+                infuraId: "17342b0f3f344d2d96c2c89c5fddc959", // Required
                 rpc: "", // Optional if `infuraId` is provided; otherwise it's required
-                chainId: 1, // Optional. It defaults to 1 if not provided
+                chainId: 4, // Optional. It defaults to 1 if not provided
                 darkMode: false // Optional. Use dark theme, defaults to false
             }
         },
@@ -40,8 +41,8 @@ export const GlobalProvider = ({ children }) => {
                 infuraId: "17342b0f3f344d2d96c2c89c5fddc959" // required
             }
         },
-        binancechainwallet: {
-            package: true
+        authereum: {
+            package: Authereum // required
         },
         // mewconnect: {
         //     package: MewConnect, // required
