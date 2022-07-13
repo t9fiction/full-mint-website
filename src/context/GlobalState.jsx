@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import RoboPunksNFT from '../components/RoboPunksNFT.json'
 import WalletConnectProvider from "@walletconnect/web3-provider";
+import CoinbaseWalletSDK from '@coinbase/wallet-sdk';
 // import MewConnect from "@myetherwallet/mewconnect-web-client";
 import { ethers, BigNumber } from 'ethers';
 import Web3Modal from "web3modal";
@@ -19,6 +20,17 @@ export const GlobalProvider = ({ children }) => {
 
     const providerOptions = {
         /* See Provider Options Section */
+        coinbasewallet: {
+            package: CoinbaseWalletSDK, // Required
+            options: {
+                appName: "My Awesome App", // Required
+                infuraId: "INFURA_ID", // Required
+                rpc: "", // Optional if `infuraId` is provided; otherwise it's required
+                chainId: 1, // Optional. It defaults to 1 if not provided
+                darkMode: false // Optional. Use dark theme, defaults to false
+            }
+        },
+
         walletconnect: {
             display: {
                 name: "Mobile"
@@ -27,6 +39,9 @@ export const GlobalProvider = ({ children }) => {
             options: {
                 infuraId: "17342b0f3f344d2d96c2c89c5fddc959" // required
             }
+        },
+        binancechainwallet: {
+            package: true
         },
         // mewconnect: {
         //     package: MewConnect, // required
@@ -57,10 +72,10 @@ export const GlobalProvider = ({ children }) => {
         return contract
     };
 
-        // disconnect wallet
-        const disconnectWallet = async () => {
-            await web3Modal.clearCachedProvider()
-        }
+    // disconnect wallet
+    const disconnectWallet = async () => {
+        await web3Modal.clearCachedProvider()
+    }
 
     const getBalance = async () => {
         const provider = await web3Modal.connect();
@@ -77,7 +92,9 @@ export const GlobalProvider = ({ children }) => {
 
     const mintToken = async () => {
         const contract = await getContract();
-        const response = await contract.mint(BigNumber.from(mintAmount))
+        const response = await contract.mint(BigNumber.from(mintAmount),{
+            value: ethers.utils.parseEther((0.02 * mintAmount).toString())
+        })
 
         // const response = await contract.mintNFTs(1, {
         //     value: ethers.utils.parseEther('0.01')

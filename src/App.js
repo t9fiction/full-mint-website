@@ -4,12 +4,14 @@ import NavBar from './components/NavBar'
 import './App.css';
 
 function App() {
-  
+
   return (
+    <div>
     <div className="App">
     <NavBar />
     <MainMint />
-      HELLOs
+    </div>
+    <div className='moving-background'></div>
     </div>
   );
 }
