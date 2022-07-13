@@ -91,17 +91,21 @@ export const GlobalProvider = ({ children }) => {
     };
 
     const mintToken = async () => {
-        const contract = await getContract();
-        const response = await contract.mint(BigNumber.from(mintAmount),{
-            value: ethers.utils.parseEther((0.02 * mintAmount).toString())
-        })
+        try {
+            const contract = await getContract();
+            const response = await contract.mint(BigNumber.from(mintAmount), {
+                value: ethers.utils.parseEther((0.02 * mintAmount).toString())
+            })
+            // const response = await contract.mintNFTs(1, {
+            //     value: ethers.utils.parseEther('0.01')
+            // });
+            await response.wait();
+            // getMintedStatus();
+            // getCount();
+        } catch (error) {
+            console.log("error: ", error)
+        }
 
-        // const response = await contract.mintNFTs(1, {
-        //     value: ethers.utils.parseEther('0.01')
-        // });
-        await response.wait();
-        // getMintedStatus();
-        // getCount();
     }
 
 
